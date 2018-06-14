@@ -12,8 +12,8 @@
   TODOs for first sprint
 
   Goal: Automated testing and deploys for local, dev, and prod environments
-  - [ ] Set up Phoenix project (`--no-brunch --no-html`) with usual dev deps
-  - [ ] Set up `create-react-app` project
+  - [X] Set up Phoenix project (`--no-brunch --no-html`) with usual dev deps
+  - [X] Set up `create-react-app` project
   - [ ] Connect client to server with a "hello world" message
   - [ ] Set up testing
     - `mix test.watch` for Elixir unit tests
@@ -23,6 +23,7 @@
     - `credo` and `eslint` for linting
   - [ ] Containerize the application (suitable for Heroku deploy)
   - [ ] Script dev/prod deploys and PR checks
+
 
   TODOs for next sprint (WIP)
 
