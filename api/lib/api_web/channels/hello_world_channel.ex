@@ -7,7 +7,7 @@ defmodule ApiWeb.HelloWorldChannel do
   end
 
   def handle_info(:after_join, socket) do
-    push(socket, "world", %{})
+    push(socket, "hello", %{"hello" => "world"})
     {:noreply, socket}
   end
 
