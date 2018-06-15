@@ -1,3 +1,4 @@
+# credo:disable-for-this-file Credo.Check.Design.AliasUsage
 defmodule ApiWeb.ChannelCase do
   @moduledoc """
   This module defines the test case to be used by
@@ -24,7 +25,6 @@ defmodule ApiWeb.ChannelCase do
       @endpoint ApiWeb.Endpoint
     end
   end
-
 
   setup tags do
     :ok = Ecto.Adapters.SQL.Sandbox.checkout(Api.Repo)

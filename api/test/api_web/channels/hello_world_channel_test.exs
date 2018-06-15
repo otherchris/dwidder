@@ -15,6 +15,5 @@ defmodule ApiWeb.HelloWorldChannelTest do
     {:ok, _, socket} =
       socket("user_id", %{some: :assign})
       |> subscribe_and_join(HelloWorldChannel, "hello_world:message")
-    IO.inspect socket
   end
 end

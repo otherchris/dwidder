@@ -1,4 +1,7 @@
 defmodule ApiWeb.HelloWorldChannel do
+  @moduledoc """
+  Channel to demonstrate websocket connection. Will be removed.
+  """
   use Phoenix.Channel
 
   def join("hello_world:message", _message, socket) do
