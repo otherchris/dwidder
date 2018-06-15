@@ -1,5 +1,4 @@
 import React from 'react';
-import { Socket } from 'phoenix';
 
 const socketConnect = (Component) => {
 
