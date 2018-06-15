@@ -21,7 +21,7 @@
     - `cypress` for local integration
     - `cypress` for local/dev/prod end-to-end
     - `credo` and `eslint` for linting
-  - [ ] Script PR check (with an eye toward CI later)
+  - [X] Script PR check (with an eye toward CI later)
 
 
   #### TODOs for next sprint (WIP- starting with second sprint will move to GH
@@ -44,5 +44,8 @@
   testing work. Have to remember to revisit this and see if it was the right
   choice.
 
+## June 15, 2018
+
+  Added a nice soon-to-be CI script.
 
 
