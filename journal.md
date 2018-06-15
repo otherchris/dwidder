@@ -9,9 +9,9 @@
   to prevent this from happening, we might have cryptographically signed the
   client.
 
-  TODOs for first sprint
+  #### TODOs for first sprint
 
-  Goal: Automated testing and deploys for local, dev, and prod environments
+  #### Goal: Automated testing and deploys for local, dev, and prod environments
   - [X] Set up Phoenix project (`--no-brunch --no-html`) with usual dev deps
   - [X] Set up `create-react-app` project
   - [X] Connect client to server with a "hello world" message
@@ -21,20 +21,21 @@
     - `cypress` for local integration
     - `cypress` for local/dev/prod end-to-end
     - `credo` and `eslint` for linting
-  - [ ] ~~Containerize the application (suitable for Heroku deploy)~~
-  - [ ] ~~Script dev/prod deploys and PR checks~~
   - [ ] Script PR check (with an eye toward CI later)
-[//]: # (0.5 hour/2 items)
-[//]: # (2 hour/1 items: had to relearn how to connect a channel)
 
 
-  TODOs for next sprint (WIP)
+  #### TODOs for next sprint (WIP- starting with second sprint will move to GH
+  issues)
 
-  Goal: Implement websocket API and user authentication
-  - [ ] Describe first iteration of websocket API
+  #### Goal: Implement websocket/graphQL API and user authentication
+  - [ ] Add graphQL consumption with Apollo to client
   - [ ] Add user authentication to back end
+  - [ ] Story: "As a user, when not logged in, when I visit dwidder, I see
+    a log in/create account page"
   - [ ] Story: "As a user I can set up an account with an email address"
   - [ ] Story: "As a user with an account, I can log in to the application"
+  - [ ] Story: "As a user, when I am logged in, when I visit dwidder, I see
+    a Feed"
 
 ## June 14, 2018
 

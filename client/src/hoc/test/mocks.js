@@ -7,7 +7,7 @@ class Channel extends EventEmitter {
   }
   join() { return this; }
   receive() { return this; }
-  emit(a, b) { super.emit(a, b) }
+  emit(a, b) { super.emit(a, b); }
 }
 
 export class MockSocket {

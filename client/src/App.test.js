@@ -1,3 +1,4 @@
+/* eslint no-undef:0 */
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
@@ -7,6 +8,6 @@ const mockSocket = new MockSocket();
 
 it('renders without crashing', () => {
   const div = document.createElement('div');
-  ReactDOM.render(<App socket={mockSocket}/>, div);
+  ReactDOM.render(<App socket={mockSocket} />, div);
   ReactDOM.unmountComponentAtNode(div);
 });
