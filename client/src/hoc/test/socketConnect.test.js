@@ -4,7 +4,7 @@ import { mount } from 'enzyme';
 import socketConnect from '../socketConnect';
 import { MockSocket } from './mocks';
 
-class Dummy extends React.Component { render() { return (<div />); } }
+const Dummy = () => (<div />);
 
 const mockSocket = new MockSocket();
 

@@ -1,12 +1,14 @@
+/* eslint react/prop-types:0 */
 import React from 'react';
+import identity from 'lodash/identity';
 
 const socketConnect = Component => class extends React.Component {
   constructor(props) {
     super(props);
-    const socket = this.props.socket;
+    const { socket } = this.props;
     socket.connect();
     const channel = socket.channel('hello_world:message', {});
-    channel.on('new_msg', msg => console.log('Got message', msg));
+    channel.on('new_msg', identity);
     this.state = {
       socket,
       channel,
@@ -16,9 +18,9 @@ const socketConnect = Component => class extends React.Component {
 
   componentDidMount() {
     this.state.channel.join()
-      .receive('ok', msg => console.log('catching up', msg))
-      .receive('error', ({ reason }) => console.log('failed join', reason))
-      .receive('timeout', () => console.log('Networking issue. Still waiting...'));
+      .receive('ok', identity)
+      .receive('error', identity)
+      .receive('timeout', identity);
     this.state.channel.on('hello', (msg) => {
       this.setState({ data: msg });
     });

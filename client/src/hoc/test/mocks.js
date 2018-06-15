@@ -1,10 +1,7 @@
-import noop from 'lodash/noop';
+/* eslint class-methods-use-this:0 */
 import EventEmitter from 'events';
 
-class Channel extends EventEmitter {
-  constructor() {
-    super();
-  }
+export class Channel extends EventEmitter {
   join() { return this; }
   receive() { return this; }
   emit(a, b) { super.emit(a, b); }
