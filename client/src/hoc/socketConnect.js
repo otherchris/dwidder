@@ -2,10 +2,11 @@ import React from 'react';
 import { Socket } from 'phoenix';
 
 const socketConnect = (Component) => {
+
   return class extends React.Component {
     constructor(props) {
       super(props);
-      const socket = new Socket('ws://localhost:4000/socket', {})
+      const socket = this.props.socket;
       socket.connect();
       const channel = socket.channel("hello_world:message", {})
       channel.on("new_msg", msg => console.log("Got message", msg) )
@@ -17,9 +18,8 @@ const socketConnect = (Component) => {
     }
 
     componentDidMount() {
-      this.state.channel.on("new_msg", msg => console.log("Got message", msg) )
       this.state.channel.join()
-      .receive("ok", (hello) => console.log("catching up", hello) )
+      .receive("ok", (msg) => console.log("catching up", msg) )
       .receive("error", ({reason}) => console.log("failed join", reason) )
       .receive("timeout", () => console.log("Networking issue. Still waiting...") )
       this.state.channel.on("hello", (msg) => {
