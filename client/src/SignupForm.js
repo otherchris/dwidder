@@ -8,8 +8,12 @@ import {
 } from 'reactstrap';
 import { Link } from 'react-router-dom';
 
-const LoginForm = () => (
+const SignupForm = () => (
   <div className="login-form">
+    <InputGroup size="lg">
+      <InputGroupAddon addonType="prepend">Name</InputGroupAddon>
+      <Input type="text"/>
+    </InputGroup>
     <InputGroup size="lg">
       <InputGroupAddon addonType="prepend">Email</InputGroupAddon>
       <Input type="email"/>
@@ -19,10 +23,14 @@ const LoginForm = () => (
       <Input type="password"/>
     </InputGroup>
     <InputGroup size="lg">
-      <Button>Login</Button>
+      <InputGroupAddon addonType="prepend">Confirm</InputGroupAddon>
+      <Input type="password"/>
     </InputGroup>
-    <Link to="/signup">Sign up</Link>
+    <InputGroup size="lg">
+      <Button>Submit</Button>
+    </InputGroup>
+    Already a member? <Link to="/login">Log in</Link>
   </div>
 );
 
-export default LoginForm;
+export default SignupForm;
