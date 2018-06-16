@@ -48,4 +48,9 @@
 
   Added a nice soon-to-be CI script.
 
+  - [ ] Story: "As a user, when not logged in, when I visit dwidder, I see
+    a log in/create account page"
 
+  - [ ] See a login field
+  - [ ] See a password field
+  - [ ] See a sign up link

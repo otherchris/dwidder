@@ -5,6 +5,7 @@ import { Socket } from 'phoenix';
 import './index.css';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const socket = new Socket('ws://localhost:4000/socket', {});
 
