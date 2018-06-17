@@ -54,3 +54,17 @@
   - [ ] See a login field
   - [ ] See a password field
   - [ ] See a sign up link
+
+## June 17, 2018
+
+  Driving most of the day, still added the UI for log in/sign up. Using a HOC
+  to hide/show pages based on auth. (Note, this is not security, dashboard
+  should not populate for unauth'ed user even if the page displays the
+  component)
+
+## June 18, 2018
+
+  Building out api auth roughly following this
+  [guide](https://blog.codeship.com/ridiculously-fast-api-authentication-with-phoenix/).
+  Note ffr [notes on deploying
+  `comeonin`](https://github.com/riverrun/comeonin/wiki/Deployment)
