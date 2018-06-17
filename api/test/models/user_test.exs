@@ -1,7 +1,7 @@
 defmodule Api.UserTest do
   use ExUnit.Case
 
-  alias Api.User
+  alias ApiWeb.User
 
   @valid_attrs %{email: "bar@baz.com", password: "s3cr3t"}
 
@@ -24,7 +24,7 @@ defmodule Api.UserTest do
     refute changeset.valid?
   end
 
-  test "registration_changeset, password too short" do
+  test "registration_changeset" do
     changeset = User.registration_changeset(%User{}, @valid_attrs)
     assert changeset.changes.password_hash
     assert changeset.valid?
