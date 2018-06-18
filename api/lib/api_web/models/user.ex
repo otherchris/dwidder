@@ -15,6 +15,7 @@ defmodule ApiWeb.User do
   def changeset(model, params \\ :empty) do
     model
     |> cast(params, ~w(email), [])
+    |> validate_required(:email)
     |> validate_length(:email, min: 3, max: 255)
     |> validate_format(:email, @valid_email_regex)
   end

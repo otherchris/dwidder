@@ -10,9 +10,9 @@ defmodule Api.UserTest do
     assert changeset.valid?
   end
 
-  test "changeset, email too short " do
+  test "changeset, email empty string" do
     changeset = User.changeset(
-      %User{}, Map.put(@valid_attrs, :email, "a")
+      %User{}, Map.put(@valid_attrs, :email, "")
     )
     refute changeset.valid?
   end
