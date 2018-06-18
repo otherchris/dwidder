@@ -42,7 +42,8 @@ defmodule Api.Mixfile do
       {:mix_test_watch, "~> 0.5", only: :dev, runtime: false},
       {:credo, "~> 0.8", only: [:dev, :test], runtime: false},
       {:comeonin, "~> 4.0"},
-      {:bcrypt_elixir, "~> 1.0"}
+      {:bcrypt_elixir, "~> 1.0"},
+      {:secure_random, "~> 0.5"}
     ]
   end
 

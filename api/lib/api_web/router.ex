@@ -8,6 +8,7 @@ defmodule ApiWeb.Router do
   scope "/api", ApiWeb do
     pipe_through :api
 
+    resources "/sessions", SessionController, only: [:create]
     resources "/users", UserController, only: [:create]
   end
 end
