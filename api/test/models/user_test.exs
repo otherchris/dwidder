@@ -12,7 +12,7 @@ defmodule Api.UserTest do
 
   test "changeset, email too short " do
     changeset = User.changeset(
-      %User{}, Map.put(@valid_attrs, :email, "")
+      %User{}, Map.put(@valid_attrs, :email, "a")
     )
     refute changeset.valid?
   end
