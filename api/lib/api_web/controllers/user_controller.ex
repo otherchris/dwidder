@@ -18,7 +18,7 @@ defmodule ApiWeb.UserController do
       {:error, changeset} ->
         conn
         |> put_status(:unprocessable_entity)
-        |> render(ApiWeb.ErrorView, "error.json", changeset: changeset)
+        |> render(ApiWeb.ErrorView, "user_create_error.json", changeset: changeset)
     end
   end
 
