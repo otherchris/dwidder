@@ -1,3 +1,4 @@
 *~
 *.swp
 logfile
+.DS_Store
