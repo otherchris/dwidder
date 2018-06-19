@@ -35,7 +35,7 @@ defmodule ApiWeb.Endpoint do
     store: :cookie,
     key: "_api_key",
     signing_salt: "l/dlqbAS"
-
+  plug CORSPlug
   plug ApiWeb.Router
 
   @doc """

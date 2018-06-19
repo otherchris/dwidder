@@ -43,6 +43,7 @@ defmodule Api.Mixfile do
       {:credo, "~> 0.8", only: [:dev, :test], runtime: false},
       {:comeonin, "~> 4.0"},
       {:bcrypt_elixir, "~> 1.0"},
+      {:cors_plug, "~> 1.1"},
       {:secure_random, "~> 0.5"}
     ]
   end
