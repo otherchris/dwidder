@@ -12,16 +12,18 @@ const signUpFormControl = Component => class extends React.Component {
     this.setState({ email: e.target.value })
   }
   updatePassword(e) {
-    this.setState({ password: e.target.value })
-    if (this.state.password == this.state.confirmPassword) {
-      this.setState({passwordError: false})
-    }
+    this.setState({ password: e.target.value }, () => {
+      if (this.state.password == this.state.confirmPassword) {
+        this.setState({passwordError: false})
+      }
+    });
   }
   updateConfirmPassword(e) {
-    this.setState({ confirmPassword: e.target.value })
-    if (this.state.password == this.state.confirmPassword) {
-      this.setState({passwordError: false})
-    }
+    this.setState({ confirmPassword: e.target.value }, () => {
+      if (this.state.password == this.state.confirmPassword) {
+        this.setState({passwordError: false})
+      }
+    });
   }
   submit() {
     if (this.state.password == this.state.confirmPassword) {
@@ -51,6 +53,7 @@ const signUpFormControl = Component => class extends React.Component {
         email={this.state.email}
         password={this.state.password}
         confirmPassword={this.state.confirmPassword}
+        passwordError={this.state.passwordError}
       />
     );
   }

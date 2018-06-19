@@ -5,6 +5,7 @@ import {
   InputGroupText,
   Input,
   Button,
+  Alert,
 } from 'reactstrap';
 import signUpFormControl from './hoc/signUpFormControl';
 import { Link } from 'react-router-dom';
@@ -22,12 +23,13 @@ const SignupForm = (props) => {
     </InputGroup>
     <InputGroup size="lg">
       <InputGroupAddon addonType="prepend">Password</InputGroupAddon>
-      <Input type="password" value={props.paswword} onChange={props.updatePassword} />
+      <Input type="password" value={props.password} onChange={props.updatePassword} />
     </InputGroup>
     <InputGroup size="lg">
       <InputGroupAddon addonType="prepend">Confirm</InputGroupAddon>
       <Input type="password" value={props.confirmPassword} onChange={props.updateConfirmPassword} />
     </InputGroup>
+    {props.passwordError ? <Alert color="danger">Passwords do not match</Alert> : ""}
     <InputGroup size="lg">
       <Button onClick={props.onSubmit}>Submit</Button>
     </InputGroup>
