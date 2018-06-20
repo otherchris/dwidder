@@ -1,4 +1,6 @@
 import React from 'react';
+import { signUp } from '../helpers';
+import { Redirect } from 'react-router-dom';
 
 const signUpFormControl = Component => class extends React.Component {
   constructor(props) {
@@ -27,17 +29,11 @@ const signUpFormControl = Component => class extends React.Component {
   }
   submit() {
     if (this.state.password == this.state.confirmPassword) {
-      const request = new Request(
-        'http://localhost:4000/api/users',
-        {
-          method: 'POST',
-          body: JSON.stringify({ user: {email: this.state.email, password: this.state.password} }),
-          headers: {
-            'content-type': 'application/json',
-          }
-        },
-      );
-      fetch(request)
+      signUp({ user: { email: this.state.email, password: this.state.password } }, (success) => {
+        if (success) {
+          this.setState({ success: true })
+        }
+      })
     }
     else {
       this.setState({passwordError: true});
@@ -45,6 +41,7 @@ const signUpFormControl = Component => class extends React.Component {
   }
   render() {
     return (
+      this.state.success ? <Redirect to='/login' /> :
       <Component
         onSubmit={this.submit.bind(this)}
         updateEmail={this.updateEmail.bind(this)}
