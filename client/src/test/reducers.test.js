@@ -8,10 +8,10 @@ describe('dwidder reducer', () => {
   });
   it('adds a session token', () => {
     expect(dwidder(cloneDeep(initialState), { type: 'ADD_SESSION', token: 'token' }))
-      .toEqual({auth: true, token: 'token', socket: {}});
+      .toEqual({ auth: true, token: 'token', socket: {} });
   });
   it('adds a socket', () => {
     expect(dwidder(cloneDeep(initialState), { type: 'ADD_SOCKET', socket: { s: 'o' } }))
-      .toEqual({auth: false, token: '', socket: { s: 'o' }});
+      .toEqual({ auth: false, token: '', socket: { s: 'o' } });
   });
 });

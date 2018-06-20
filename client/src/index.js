@@ -11,12 +11,11 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { dwidder } from './reducers';
 import { addSocket } from './actions';
 
-const store = createStore(dwidder)
+const store = createStore(dwidder);
 
-store.dispatch(addSocket(new Socket('ws://localhost:4000/socket')))
+store.dispatch(addSocket(new Socket('ws://localhost:4000/socket')));
 
-ReactDOM.render(
-  <Provider store={store}>
-    <App socket={store.getState().socket}/>
-  </Provider>, document.getElementById('root'));
+ReactDOM.render(<Provider store={store}>
+  <App socket={store.getState().socket} />
+                </Provider>, document.getElementById('root'));
 registerServiceWorker();

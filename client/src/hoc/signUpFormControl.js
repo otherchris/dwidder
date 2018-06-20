@@ -6,24 +6,24 @@ const signUpFormControl = Component => class extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      email: "",
-      password: "",
-    }
+      email: '',
+      password: '',
+    };
   }
   updateEmail(e) {
-    this.setState({ email: e.target.value })
+    this.setState({ email: e.target.value });
   }
   updatePassword(e) {
     this.setState({ password: e.target.value }, () => {
       if (this.state.password == this.state.confirmPassword) {
-        this.setState({passwordError: false})
+        this.setState({ passwordError: false });
       }
     });
   }
   updateConfirmPassword(e) {
     this.setState({ confirmPassword: e.target.value }, () => {
       if (this.state.password == this.state.confirmPassword) {
-        this.setState({passwordError: false})
+        this.setState({ passwordError: false });
       }
     });
   }
@@ -31,17 +31,16 @@ const signUpFormControl = Component => class extends React.Component {
     if (this.state.password == this.state.confirmPassword) {
       signUp({ user: { email: this.state.email, password: this.state.password } }, (success) => {
         if (success) {
-          this.setState({ success: true })
+          this.setState({ success: true });
         }
-      })
-    }
-    else {
-      this.setState({passwordError: true});
+      });
+    } else {
+      this.setState({ passwordError: true });
     }
   }
   render() {
     return (
-      this.state.success ? <Redirect to='/login' /> :
+      this.state.success ? <Redirect to="/login" /> :
       <Component
         onSubmit={this.submit.bind(this)}
         updateEmail={this.updateEmail.bind(this)}
@@ -54,6 +53,6 @@ const signUpFormControl = Component => class extends React.Component {
       />
     );
   }
-}
+};
 
 export default signUpFormControl;

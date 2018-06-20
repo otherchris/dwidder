@@ -12,11 +12,11 @@ const LoginForm = () => (
   <div className="login-form">
     <InputGroup size="lg">
       <InputGroupAddon addonType="prepend">Email</InputGroupAddon>
-      <Input type="email"/>
+      <Input type="email" />
     </InputGroup>
     <InputGroup size="lg">
       <InputGroupAddon addonType="prepend">Password</InputGroupAddon>
-      <Input type="password"/>
+      <Input type="password" />
     </InputGroup>
     <InputGroup size="lg">
       <Button>Login</Button>

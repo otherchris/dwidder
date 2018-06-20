@@ -1,3 +1,4 @@
+/* eslint no-undef:0 */
 export const signUp = (user, cb) => {
   const request = new Request(
     'http://localhost:4000/api/users',
@@ -6,16 +7,15 @@ export const signUp = (user, cb) => {
       body: JSON.stringify(user),
       headers: {
         'content-type': 'application/json',
-      }
+      },
     },
   );
   fetch(request)
-  .then((resp) => {
-    if (resp.status === 201) {
-      cb(true);
-    }
-    else {
-      cb(false);
-    }
-  })
+    .then((resp) => {
+      if (resp.status === 201) {
+        cb(true);
+      } else {
+        cb(false);
+      }
+    });
 };

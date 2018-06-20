@@ -1,6 +1,6 @@
 import assign from 'lodash/assign';
 
-export const initialState = { socket: {}, token: '', auth: false }
+export const initialState = { socket: {}, token: '', auth: false };
 
 export const dwidder = (state = initialState, action) => {
   switch (action.type) {
@@ -10,5 +10,5 @@ export const dwidder = (state = initialState, action) => {
       return assign(state, { socket: action.socket });
     default:
       return state;
-  };
+  }
 };

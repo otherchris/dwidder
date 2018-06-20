@@ -10,16 +10,15 @@ import {
 import signUpFormControl from './hoc/signUpFormControl';
 import { Link } from 'react-router-dom';
 
-const SignupForm = (props) => {
-  return (
+const SignupForm = props => (
   <div className="login-form">
     <InputGroup size="lg">
       <InputGroupAddon addonType="prepend">Name</InputGroupAddon>
-      <Input type="text"/>
+      <Input type="text" />
     </InputGroup>
     <InputGroup size="lg">
       <InputGroupAddon addonType="prepend">Email</InputGroupAddon>
-      <Input type="email" value={props.email} onChange={props.updateEmail}/>
+      <Input type="email" value={props.email} onChange={props.updateEmail} />
     </InputGroup>
     <InputGroup size="lg">
       <InputGroupAddon addonType="prepend">Password</InputGroupAddon>
@@ -29,12 +28,12 @@ const SignupForm = (props) => {
       <InputGroupAddon addonType="prepend">Confirm</InputGroupAddon>
       <Input type="password" value={props.confirmPassword} onChange={props.updateConfirmPassword} />
     </InputGroup>
-    {props.passwordError ? <Alert color="danger">Passwords do not match</Alert> : ""}
+    {props.passwordError ? <Alert color="danger">Passwords do not match</Alert> : ''}
     <InputGroup size="lg">
       <Button onClick={props.onSubmit}>Submit</Button>
     </InputGroup>
     Already a member? <Link to="/login">Log in</Link>
   </div>
-)};
+);
 
 export default signUpFormControl(SignupForm);
