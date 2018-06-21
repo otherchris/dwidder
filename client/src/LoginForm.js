@@ -7,6 +7,7 @@ import {
   Button,
 } from 'reactstrap';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux'
 import loginFormControl from './hoc/loginFormControl';
 
 const LoginForm = (props) => (
@@ -26,4 +27,4 @@ const LoginForm = (props) => (
   </div>
 );
 
-export default loginFormControl(LoginForm);
+export default connect()(loginFormControl(LoginForm));

@@ -1,8 +1,15 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import authComponent from './hoc/authComponent';
+
+const mapStateToProps = state => {
+  return {
+    auth: state.auth
+  }
+};
 
 const Dashboard = () => (
   <div>dwidder</div>
 );
 
-export default authComponent(Dashboard);
+export default connect(mapStateToProps)(authComponent(Dashboard));

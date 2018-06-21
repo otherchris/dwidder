@@ -1,6 +1,7 @@
 import React from 'react';
 import { login } from '../helpers';
 import { Redirect } from 'react-router-dom';
+import { addSession } from '../actions'
 
 const loginFormControl = Component => class extends React.Component {
   constructor(props) {
@@ -23,13 +24,15 @@ const loginFormControl = Component => class extends React.Component {
   submit() {
     login({ user: { email: this.state.email, password: this.state.password } }, (success, token) => {
       if (success) {
-        console.log(token)
+        this.props.dispatch(addSession(token));
+        this.setState({ success: true });
       } else {
-        console.log('fart')
+        console.log('failed to login')
     }});
   }
   render() {
     return (
+      this.state.success ? <Redirect to="/dashboard" /> :
       <Component
         onSubmit={this.submit.bind(this)}
         updateEmail={this.updateEmail.bind(this)}
