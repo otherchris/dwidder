@@ -7,22 +7,23 @@ import {
   Button,
 } from 'reactstrap';
 import { Link } from 'react-router-dom';
+import loginFormControl from './hoc/loginFormControl';
 
-const LoginForm = () => (
+const LoginForm = (props) => (
   <div className="login-form">
     <InputGroup size="lg">
       <InputGroupAddon addonType="prepend">Email</InputGroupAddon>
-      <Input type="email" />
+      <Input onChange={props.updateEmail} value={props.email} type="email" />
     </InputGroup>
     <InputGroup size="lg">
       <InputGroupAddon addonType="prepend">Password</InputGroupAddon>
-      <Input type="password" />
+      <Input onChange={props.updatePassword} value={props.password} type="password" />
     </InputGroup>
     <InputGroup size="lg">
-      <Button>Login</Button>
+      <Button onClick={props.onSubmit}>Login</Button>
     </InputGroup>
     <Link to="/signup">Sign up</Link>
   </div>
 );
 
-export default LoginForm;
+export default loginFormControl(LoginForm);
