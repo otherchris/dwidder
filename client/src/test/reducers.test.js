@@ -1,7 +1,6 @@
 import cloneDeep from 'lodash/cloneDeep';
 import { dwidder, initialState } from '../reducers';
 
-
 describe('dwidder reducer', () => {
   it('handles initial state', () => {
     expect(dwidder(undefined, {})).toEqual(initialState);

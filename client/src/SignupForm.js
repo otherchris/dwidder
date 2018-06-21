@@ -11,7 +11,7 @@ import signUpFormControl from './hoc/signUpFormControl';
 import { Link } from 'react-router-dom';
 
 const SignupForm = props => (
-  <div className="login-form">
+  <div className="signup-form">
     <InputGroup size="lg">
       <InputGroupAddon addonType="prepend">Name</InputGroupAddon>
       <Input type="text" />

@@ -6,10 +6,10 @@ import SignupForm from './SignupForm';
 import Dashboard from './Dashboard';
 import './App.css';
 
-const App = () => (
+export const App = () => (
   <BrowserRouter>
     <div className="App">
-      <Route path="/" component={() => (<Redirect to="/dashboard" />)} />
+      <Route exact path="/" component={() => (<Redirect to="/dashboard" />)} />
       <Route path="/dashboard" component={Dashboard} />
       <Route path="/login" component={LoginForm} />
       <Route path="/signup" component={SignupForm} />
