@@ -28,14 +28,13 @@
   issues)
 
   #### Goal: Implement websocket/graphQL API and user authentication
-  - [ ] Add graphQL consumption with Apollo to client
-  - [ ] Add user authentication to back end
-  - [ ] Story: "As a user, when not logged in, when I visit dwidder, I see
+  - [X] Add user authentication to back end
+  - [X] Story: "As a user, when not logged in, when I visit dwidder, I see
     a log in/create account page"
-  - [ ] Story: "As a user I can set up an account with an email address"
-  - [ ] Story: "As a user with an account, I can log in to the application"
-  - [ ] Story: "As a user, when I am logged in, when I visit dwidder, I see
-    a Feed"
+  - [X] Story: "As a user I can set up an account with an email address"
+  - [X] Story: "As a user with an account, I can log in to the application"
+  - [X] Story: "As a user, when I am logged in, when I visit dwidder, I see
+    a Dashboard"
 
 ## June 14, 2018
 
@@ -48,12 +47,12 @@
 
   Added a nice soon-to-be CI script.
 
-  - [ ] Story: "As a user, when not logged in, when I visit dwidder, I see
+  - [X] Story: "As a user, when not logged in, when I visit dwidder, I see
     a log in/create account page"
 
-  - [ ] See a login field
-  - [ ] See a password field
-  - [ ] See a sign up link
+  - [X] See a login field
+  - [X] See a password field
+  - [X] See a sign up link
 
 ## June 17, 2018
 
@@ -68,3 +67,30 @@
   [guide](https://blog.codeship.com/ridiculously-fast-api-authentication-with-phoenix/).
   Note ffr [notes on deploying
   `comeonin`](https://github.com/riverrun/comeonin/wiki/Deployment)
+
+## June 21, 2018
+
+  So now we have a working sign-up/login system. Next step will be to put
+  together the actual feed and post system.
+
+  - [ ] Dashboard: Name, All/Followed switch, Feed component
+    - [ ] Add name to user schema
+    - [ ] Set name on sign up
+    - [ ] Pull name on log in
+    - [ ] Add name to dashboard
+    - [ ] Add All/Followed switch to dashboard
+    - [ ] Add Feed component to dash
+  - [ ] Feed Component
+    - [ ] Presentation layer for post
+    - [ ] presentation layer for feed
+    - [ ] container for feed
+    - [ ] schema for post
+    - [ ] REST for post
+    - [ ] update redux state with posts
+    - [ ] switch from viewing all posts/followed posts
+
+
+  Also, in trying to adapt a guide for an older version of Phoenix, the
+  scaffolding of the api has gotten a bit wonky. Before launching into this
+  next set of tickets, it's time to wrangle this project back under linting
+  and tests before it gets out of hand.
