@@ -1,4 +1,7 @@
 defmodule ApiWeb.Session do
+  @moduledoc """
+  Model for authenticated session
+  """
   alias Api.Repo
   use Ecto.Schema
 

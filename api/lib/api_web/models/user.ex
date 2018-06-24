@@ -1,7 +1,12 @@
 defmodule ApiWeb.User do
+  @moduledoc """
+  User model
+  """
   use Ecto.Schema
 
   import Ecto.Changeset
+  alias Api.Repo
+  alias Ecto.Changeset
 
   @valid_email_regex ~r/\A([\w+\-].?)+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i
   schema "users" do
@@ -30,8 +35,8 @@ defmodule ApiWeb.User do
 
   defp put_password_hash(changeset) do
     case changeset do
-      %Ecto.Changeset{valid?: true, changes: %{password: pass}} ->
-        put_change(changeset, :password_hash, Comeonin.Bcrypt.hashpwsalt(pass))
+      %Changeset{valid?: true, changes: %{password: pass}} ->
+        put_change(changeset, :password_hash, Bcrypt.hash_pwd_salt(pass))
       _ ->
         changeset
     end

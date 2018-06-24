@@ -1,9 +1,12 @@
 defmodule ApiWeb.Authentication do
+  @moduledoc """
+  Authentication plug for API
+  """
 
-  import Plug.Conn
-  alias ApiWeb.{User, Session}
-  alias Api.Repo
   import Ecto.Query, only: [from: 2]
+  import Plug.Conn
+  alias Api.Repo
+  alias ApiWeb.{Session, User}
 
   def init(options), do: options
 
@@ -44,4 +47,3 @@ defmodule ApiWeb.Authentication do
     conn |> put_status(:unauthorized) |> halt()
   end
 end
-

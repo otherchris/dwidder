@@ -1,7 +1,6 @@
 defmodule Api.SessionTest do
   use ExUnit.Case
 
-
   alias ApiWeb.Session
   @valid_attrs %{user_id: "12345"}
   @invalid_attrs %{}

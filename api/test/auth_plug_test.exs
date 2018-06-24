@@ -1,8 +1,8 @@
 defmodule Api.AuthenticationTest do
   use ApiWeb.ConnCase
 
-  alias ApiWeb.{Authentication, User, Session}
   alias Api.Repo
+  alias ApiWeb.{Authentication, Session, User}
 
   @opts Authentication.init([])
 

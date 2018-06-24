@@ -4,8 +4,8 @@ defmodule ApiWeb.SessionController do
   import Comeonin.Bcrypt, only: [checkpw: 2, dummy_checkpw: 0]
 
   alias Api.Repo
-  alias ApiWeb.User
   alias ApiWeb.Session
+  alias ApiWeb.User
 
   def create(conn, %{"user" => user_params}) do
     user = Repo.get_by(User, email: user_params["email"])

@@ -3,7 +3,7 @@ defmodule ApiWeb.UserController do
 
   alias Api.Repo
 
-  alias ApiWeb.User
+  alias ApiWeb.{ErrorView, User}
 
   plug :scrub_params, "user" when action in [:create]
 
@@ -18,9 +18,8 @@ defmodule ApiWeb.UserController do
       {:error, changeset} ->
         conn
         |> put_status(:unprocessable_entity)
-        |> render(ApiWeb.ErrorView, "user_create_error.json", changeset: changeset)
+        |> render(ErrorView, "user_create_error.json", changeset: changeset)
     end
   end
 
 end
-
