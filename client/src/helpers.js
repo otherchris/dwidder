@@ -34,9 +34,9 @@ export const login = (user, cb) => {
   fetch(request)
     .then((resp) => {
       if (resp.status === 201) {
-        resp.json().then(data => cb(true, data.data.token))
+        resp.json().then(data => cb(true, data.data.token));
       } else {
         cb(false);
       }
     });
-}
+};

@@ -2,13 +2,12 @@ import React from 'react';
 import {
   InputGroup,
   InputGroupAddon,
-  InputGroupText,
   Input,
   Button,
   Alert,
 } from 'reactstrap';
-import signUpFormControl from './hoc/signUpFormControl';
 import { Link } from 'react-router-dom';
+import signUpFormControl from './hoc/signUpFormControl';
 
 const SignupForm = props => (
   <div className="signup-form">

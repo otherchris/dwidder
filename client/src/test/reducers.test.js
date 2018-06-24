@@ -1,3 +1,4 @@
+/* eslint no-undef:0 */
 import cloneDeep from 'lodash/cloneDeep';
 import { dwidder, initialState } from '../reducers';
 

@@ -16,6 +16,8 @@ it('renders without crashing', () => {
   ReactDOM.render(
     <Provider store={store}>
       <App socket={mockSocket} />
-    </Provider>, div);
+    </Provider>,
+    div,
+  );
   ReactDOM.unmountComponentAtNode(div);
 });

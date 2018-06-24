@@ -1,0 +1,91 @@
+{
+  "parser": "babel-eslint",
+  "env": {
+    "browser": true,
+    "commonjs": true,
+    "es6": true,
+    "meteor": true,
+    "node": true,
+    "jest/globals": true
+  },
+  "settings": {
+    "import/ignore": ["meteor"],
+    "import/core-modules": ["aws-sdk", "meteor", "meteor/meteor"],
+    "import/resolver": { "meteor": {"extensions": [".js", ".jsx"]} }
+  },
+  "parserOptions": {
+    "allowImportExportEverywhere": true,
+    "ecmaVersion": 6,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "plugins": [
+    "babel",
+    "import",
+    "meteor",
+    "react",
+    "jest"
+  ],
+  "extends": [
+    "airbnb/base",
+    "plugin:meteor/recommended",
+    "plugin:react/recommended",
+    "plugin:jest/recommended"
+  ],
+  "globals": {
+    "$": false,
+    "Accounts": false,
+    "Bert": false,
+    "browser": false,
+    "expect": false,
+    "Factory": false,
+    "Meteor": false,
+    "Roles": false,
+    "Impersonate": false,
+    "server": false,
+    "SimpleSchema": false,
+    "ValidatedMethod": false
+  },
+  "rules": {
+    "indent": [2, 2],
+    "quotes": [2, "single"],
+    "linebreak-style": [2, "unix"],
+    "semi": [2, "always"],
+    "strict": 0,
+    "no-unused-vars": 2,
+    "arrow-parens": 0,
+    "camelcase": 0,
+    "import/extensions": 0,
+    "import/no-unresolved": [
+      2,
+     { "commonjs": true, "amd": true, "ignore": ["^meteor/"] }
+    ],
+    "import/no-extraneous-dependencies": 0,
+    "import/named": 2,
+    "import/namespace": 2,
+    "import/export": 2,
+    "new-cap": 0,
+    "no-console": 0,
+    "no-comma-dangle": 0,
+    "no-param-reassign": 0,
+    "no-underscore-dangle": 0,
+    "no-return-assign": 0,
+    "max-len": ["error", 100],
+    "react/jsx-closing-bracket-location": [
+      1, "line-aligned"
+    ],
+    "react/prop-types": 0,
+    "react/no-deprecated": 1
+  },
+  "overrides": [
+    {
+      "files": ["imports/**/*.test*"],
+      "rules": {
+        "jest/valid-expect": 0,
+        "jest/no-identical-title": 0
+      }
+    }
+  ]
+}
