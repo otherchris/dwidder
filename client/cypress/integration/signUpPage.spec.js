@@ -19,7 +19,7 @@ describe('Visit sign-up page', () => {
     cy.get('div.input-group:nth-of-type(4)').find('input').type('password123');
 
     cy.get('div.alert-danger').should('not.exist');
-    cy.get('button').click();
+    // cy.get('button').click();
   });
 
   // Now do it logged in
