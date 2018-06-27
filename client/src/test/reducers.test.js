@@ -8,10 +8,29 @@ describe('dwidder reducer', () => {
   });
   it('adds a session token', () => {
     expect(dwidder(cloneDeep(initialState), { type: 'ADD_SESSION', session: { token: 'token' } }))
-      .toEqual({ auth: true, session: { token: 'token' }, socket: {} });
+      .toEqual({
+        auth: true,
+        posts: [],
+        session: { token: 'token' },
+        socket: {},
+      });
   });
   it('adds a socket', () => {
     expect(dwidder(cloneDeep(initialState), { type: 'ADD_SOCKET', socket: { s: 'o' } }))
-      .toEqual({ auth: false, session: {}, socket: { s: 'o' } });
+      .toEqual({
+        auth: false,
+        session: {},
+        socket: { s: 'o' },
+        posts: [],
+      });
+  });
+  it('adds a post list', () => {
+    expect(dwidder(cloneDeep(initialState), { type: 'ADD_POSTS', posts: ['a', 'b'] }))
+      .toEqual({
+        auth: false,
+        session: {},
+        socket: {},
+        posts: ['a', 'b'],
+      });
   });
 });
