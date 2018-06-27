@@ -1,7 +1,7 @@
 import React from 'react';
 import { Redirect } from 'react-router-dom';
-import { login } from '../helpers';
-import { addSession } from '../actions';
+import { login, getPosts } from '../helpers';
+import { addSession, addPosts } from '../actions';
 
 const loginFormControl = Component => class extends React.Component {
   constructor(props) {
@@ -32,8 +32,11 @@ const loginFormControl = Component => class extends React.Component {
       },
     }, (success, session) => {
       if (success) {
-        this.props.dispatch(addSession(session));
-        this.setState({ success: true });
+        getPosts((posts) => {
+          this.props.dispatch(addPosts(posts));
+          this.props.dispatch(addSession(session));
+          this.setState({ success: true });
+        });
       }
     });
   }

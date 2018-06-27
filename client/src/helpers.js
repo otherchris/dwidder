@@ -61,9 +61,16 @@ export const post = (postData, cb) => {
     .then((resp) => {
       if (resp.status === 201) {
         resp.json()
-          .then(data => console.log(data))
+          .then(data => data);
       } else {
         cb(false);
       }
+    });
+};
+
+export const getPosts = (cb) => {
+  fetch('http://localhost:4000/api/posts')
+    .then((resp) => {
+      resp.json().then((data) => { cb(data); });
     });
 };

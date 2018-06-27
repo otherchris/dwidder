@@ -7,12 +7,14 @@ import {
   Modal,
   Input,
 } from 'reactstrap';
+import PostList from './PostList';
 import authComponent from './hoc/authComponent';
 import modalControl from './hoc/modalControl';
 import postControl from './hoc/postControl';
 
 const mapStateToProps = state => ({
   auth: state.auth,
+  posts: state.posts,
   userId: state.session.userId,
   userName: state.session.userName,
 });
@@ -26,6 +28,7 @@ const Dashboard = props => (
         <Button onClick={props.modalToggle}>New Post</Button>
       </InputGroup>
     </div>
+    <PostList posts={props.posts} />
     <Modal isOpen={props.modalOpen}>
       <div onClick={props.modalToggle} className="modal-close">X</div>
       <Input type="textarea" value={props.postValue} onChange={props.postUpdate} />
