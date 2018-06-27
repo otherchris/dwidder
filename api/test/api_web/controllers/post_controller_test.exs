@@ -2,8 +2,8 @@ defmodule ApiWeb.PostControllerTest do
   use ApiWeb.ConnCase
 
   alias Api.Repo
-  alias ApiWeb.User
   alias ApiWeb.Post
+  alias ApiWeb.User
 
   @valid_attrs %{text: "this is a post"}
 
@@ -30,6 +30,6 @@ defmodule ApiWeb.PostControllerTest do
   test "renders a list of all posts" do
     conn = get conn, post_path(conn, :index)
     body = json_response(conn, 200)
-    assert length(body) == 0
+    assert body == []
   end
 end
