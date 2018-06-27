@@ -74,19 +74,19 @@
   together the actual feed and post system.
 
   - [ ] Dashboard: Name, All/Followed switch, Feed component
-    - [ ] Add name to user schema
-    - [ ] Set name on sign up
-    - [ ] Pull name on log in
-    - [ ] Add name to dashboard
+    - [X] Add name to user schema
+    - [X] Set name on sign up
+    - [X] Pull name on log in
+    - [X] Add name to dashboard
     - [ ] Add All/Followed switch to dashboard
-    - [ ] Add Feed component to dash
+    - [X] Add Feed component to dash
   - [ ] Feed Component
-    - [ ] Presentation layer for post
-    - [ ] presentation layer for feed
-    - [ ] container for feed
-    - [ ] schema for post
-    - [ ] REST for post
-    - [ ] update redux state with posts
+    - [X] Presentation layer for post
+    - [X] presentation layer for feed
+    - [X] container for feed
+    - [X] schema for post
+    - [X] REST for post
+    - [X] update redux state with posts
     - [ ] switch from viewing all posts/followed posts
 
 
@@ -94,3 +94,8 @@
   scaffolding of the api has gotten a bit wonky. Before launching into this
   next set of tickets, it's time to wrangle this project back under linting
   and tests before it gets out of hand.
+
+## June 27, 2010
+
+  Got away from narrating a bit there. Nonetheless, not a bad place to stop for
+  a bit.
