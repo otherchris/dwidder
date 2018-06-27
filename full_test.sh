@@ -12,3 +12,5 @@ cypress run || { echo "FAIL in local integration tests"; exit 1; }
 npm run lint || { echo "FAIL in eslint"; exit 1; }
 cd ../api
 mix credo --strict || { echo "FAIL in credo"; exit 1; }
+
+echo "Linting clean and testing green, full steam ahead"
