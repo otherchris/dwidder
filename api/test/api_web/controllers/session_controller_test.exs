@@ -4,7 +4,7 @@ defmodule ApiWeb.SessionControllerTest do
   alias Api.Repo
   alias ApiWeb.Session
   alias ApiWeb.User
-  @valid_attrs %{email: "foo@bar.com", password: "s3cr3t"}
+  @valid_attrs %{name: "name", email: "foo@bar.com", password: "s3cr3t"}
 
   setup %{conn: conn} do
     changeset =  User.registration_changeset(%User{}, @valid_attrs)

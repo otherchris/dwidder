@@ -3,7 +3,7 @@ defmodule Api.UserTest do
 
   alias ApiWeb.User
 
-  @valid_attrs %{email: "bar@baz.com", password: "s3cr3t"}
+  @valid_attrs %{name: "name", email: "bar@baz.com", password: "s3cr3t"}
 
   test "changeset with valid attributes" do
     changeset = User.changeset(%User{}, @valid_attrs)
@@ -13,6 +13,13 @@ defmodule Api.UserTest do
   test "changeset, email empty string" do
     changeset = User.changeset(
       %User{}, Map.put(@valid_attrs, :email, "")
+    )
+    refute changeset.valid?
+  end
+
+  test "changeset, name is null" do
+    changeset = User.changeset(
+      %User{}, Map.delete(@valid_attrs, :name)
     )
     refute changeset.valid?
   end

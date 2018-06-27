@@ -12,7 +12,7 @@ defmodule Api.AuthenticationTest do
   end
 
   test "finds the user by token", %{conn: conn} do
-    user = Repo.insert!(%User{email: "test@em.ail"})
+    user = Repo.insert!(%User{name: "name", email: "test@em.ail"})
     session = Repo.insert!(%Session{token: "123", user_id: user.id})
 
     conn = conn

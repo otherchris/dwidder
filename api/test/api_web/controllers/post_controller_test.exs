@@ -8,7 +8,7 @@ defmodule ApiWeb.PostControllerTest do
   @valid_attrs %{text: "this is a post"}
 
   setup %{conn: conn} do
-    user_changeset = User.changeset(%User{}, %{email: "as@em.ail", password: "pwdded"})
+    user_changeset = User.changeset(%User{}, %{name: "name", email: "as@em.ail", password: "pwdded"})
     {:ok, %{id: user_id}} = Repo.insert(user_changeset)
     {:ok, conn: put_req_header(conn, "accept", "application/json"), user_id: user_id}
   end

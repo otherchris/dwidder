@@ -10,6 +10,7 @@ defmodule ApiWeb.User do
 
   @valid_email_regex ~r/\A([\w+\-].?)+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i
   schema "users" do
+    field :name, :string
     field :email, :string
     field :password_hash, :string
     field :password, :string, virtual: true
@@ -19,8 +20,9 @@ defmodule ApiWeb.User do
 
   def changeset(model, params \\ :empty) do
     model
-    |> cast(params, ~w(email), [])
+    |> cast(params, ~w(email name), [])
     |> validate_required(:email)
+    |> validate_required(:name)
     |> validate_length(:email, min: 3, max: 255)
     |> validate_format(:email, @valid_email_regex)
   end

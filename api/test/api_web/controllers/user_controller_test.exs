@@ -4,7 +4,7 @@ defmodule ApiWeb.UserControllerTest do
   alias Api.Repo
   alias ApiWeb.User
 
-  @valid_attrs %{email: "foo@bar.com", password: "s3cr3t"}
+  @valid_attrs %{name: "name", email: "foo@bar.com", password: "s3cr3t"}
   @invalid_attrs %{}
 
   setup %{conn: conn} do
