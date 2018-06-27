@@ -28,8 +28,8 @@ defmodule ApiWeb.PostControllerTest do
   end
 
   test "renders a list of all posts" do
-    conn = post conn, post_path(conn, :index)
+    conn = get conn, post_path(conn, :index)
     body = json_response(conn, 200)
-    assert length(body["data"]["posts"]) == 1
+    assert length(body) == 0
   end
 end

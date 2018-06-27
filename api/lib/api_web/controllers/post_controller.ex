@@ -5,6 +5,7 @@ defmodule ApiWeb.PostController do
   alias ApiWeb.Session
   alias ApiWeb.Post
   alias ApiWeb.User
+  alias ApiWeb.ErrorView
 
   def create(conn, %{"post" => post_params}) do
     post_changeset = Post.changeset(%Post{}, post_params)
@@ -22,7 +23,8 @@ defmodule ApiWeb.PostController do
 
   def index(conn, params) do
     results = Repo.all(Post)
+              |> IO.inspect
     conn
-    |> render("index.json", results: results)
+    |> render("index.json", %{results: results})
   end
 end

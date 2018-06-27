@@ -6,7 +6,7 @@ defmodule ApiWeb.SessionView do
   end
 
   def render("session.json", %{session: session}) do
-    %{token: session.token}
+    %{token: session.token, user_id: session.user_id}
   end
 
   def render("error.json", _anything) do

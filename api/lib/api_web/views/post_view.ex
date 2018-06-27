@@ -13,7 +13,13 @@ defmodule ApiWeb.PostView do
     }
   end
 
-  def render("index.json", %{results: results}) do
-    results
+  def render("index.json",%{results: results}) do
+    Enum.map(results, fn(x) ->
+      %{
+        id: x.id,
+        user_id: x.user_id,
+        text: x.text
+      }
+    end)
   end
 end
