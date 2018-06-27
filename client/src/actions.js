@@ -1,6 +1,6 @@
-export const addSession = token => ({
+export const addSession = session => ({
   type: 'ADD_SESSION',
-  token,
+  session,
 });
 
 export const addSocket = socket => ({

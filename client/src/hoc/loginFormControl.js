@@ -30,9 +30,9 @@ const loginFormControl = Component => class extends React.Component {
         email: this.state.email,
         password: this.state.password,
       },
-    }, (success, token) => {
+    }, (success, session) => {
       if (success) {
-        this.props.dispatch(addSession(token));
+        this.props.dispatch(addSession(session));
         this.setState({ success: true });
       }
     });

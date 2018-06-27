@@ -3,9 +3,12 @@ import * as actions from '../actions';
 
 describe('auth actions', () => {
   it('addSession should create ADD_SESSION action', () => {
-    expect(actions.addSession('token')).toEqual({
+    expect(actions.addSession({ token: 'token', userName: 'name' })).toEqual({
       type: 'ADD_SESSION',
-      token: 'token',
+      session: {
+        token: 'token',
+        userName: 'name',
+      },
     });
   });
   it('addSocket should create ADD_SOCKET action', () => {

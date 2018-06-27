@@ -13,9 +13,10 @@ defmodule ApiWeb.SessionController do
       user && checkpw(user_params["password"], user.password_hash) ->
         session_changeset = Session.create_changeset(%Session{}, %{user_id: user.id})
         {:ok, session} = Repo.insert(session_changeset)
+        session_with_user = Repo.preload(session, :user)
         conn
         |> put_status(:created)
-        |> render("show.json", session: session)
+        |> render("show.json", session: session_with_user)
       user ->
         conn
         |> put_status(:unauthorized)

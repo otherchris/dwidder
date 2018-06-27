@@ -13,7 +13,7 @@ const SignupForm = props => (
   <div className="signup-form">
     <InputGroup size="lg">
       <InputGroupAddon addonType="prepend">Name</InputGroupAddon>
-      <Input type="text" />
+      <Input type="text" value={props.name} onChange={props.updateName} />
     </InputGroup>
     <InputGroup size="lg">
       <InputGroupAddon addonType="prepend">Email</InputGroupAddon>
